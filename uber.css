@@ -1,0 +1,807 @@
+/*
+
+Yogensia's UberStyle for GameBanana
+http://gamebanana.com/members/1328950
+
+Licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+http://creativecommons.org/licenses/by-nc-sa/3.0/
+
+Document Outline:
+-----------------
+
+- CUSTOM FONTS
+- HIDES
+- RESET GB ELEMENTS
+- GENERAL
+  - Clearfix
+  - Common Elements
+  - Layout
+- CONTENT
+  - General Styles
+  - Section Menu (top bar)
+  - Branding
+  - Dropdown Menus
+  - Forms
+- MODULES
+  - Common Module Styles
+  - Submission Modules
+  - About Module (third party)
+  - Social Links Module (third party)
+  - Staff Module
+  - Buddies and Subscribers Modules
+  - PMs and Subscribe Button
+  - Latest Visitors Module
+  - Add Message Button
+  - Messages Module
+  - Message Styles
+- OTHER GAMEBANANA STYLES
+  - Buttons
+  - Modals
+  - Tooltips
+  - Stamps
+- THIRD PARTY MODULES
+- WEBKIT SCROLLBAR
+
+*/
+
+
+
+/* CUSTOM FONTS
+-------------------------------------------------------------- */
+
+/* Roboto Condensed (headlines) */
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Open+Sans:400italic,700italic,400,700);
+
+
+
+/* HIDES
+-------------------------------------------------------------- */
+
+
+/* Hide Ads */
+div#TopBanner,
+div#AtfSquareBanner,
+div#BtfSquareBanner,
+div#FooterBannerRow,
+div#SiteSkinWrapper,
+#cpmstar-site-skin-l,
+#cpmstar-site-skin-r,
+
+/* Hide Content */
+div#TitleBreadcrumb,
+div#SubdomainMenus,
+#FooterBannerWrapper,
+div.ContentColumn.StaticColumn,
+.MultipleRowListModule div.Preview img.Avatar,
+#FooterWrapper,
+#SectionLinks .sf-menu #GameProfilesMenu,
+#SiteSearch #SearchableGames,
+ul#ImportantLinks {
+    display: none;
+}
+
+
+/* SEO Hides */
+h2#PageTitle {
+    position: absolute;
+    text-indent: -9999px;
+}
+
+
+
+/* RESET GB ELEMENTS
+-------------------------------------------------------------- */
+
+.Module ul.LogMessages {
+    font-size: 14px;
+    text-align: center;
+}
+
+#Wrapper a img:hover {
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+
+
+/* GENERAL
+-------------------------------------------------------------- */
+
+/* Clearfix */
+.clearfix:after, .container:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    overflow: hidden;
+}
+.clearfix, .container {
+    display: block;
+}
+
+/* Common Elements */
+a:focus,
+button:focus,
+img:focus,
+input:focus,
+textarea:focus {
+    outline:none;
+}
+
+input[type="text"],
+textarea {
+    background:#1c2227;
+    border-color:#748a94;
+}
+
+input[type="text"]:hover,
+textarea:hover,
+input[type="text"]:focus,
+textarea:focus {
+    border-color:#94b8c8;
+}
+
+
+/* Layout */
+div#Wrapper {
+    padding-top: 45px;
+    width: 1220px;
+}
+
+div#MainContent {
+    border-radius: 5px 5px 0;
+    margin: 0 auto;
+    padding: 50px 0 60px;
+    width: 1220px;
+}
+
+div#ColumnGrid {
+    background: rgba(23,23,23,0.5);
+    overflow: hidden;
+    padding: 20px 20px 0;
+    width: 1180px;
+}
+
+div.FullColumn {
+    clear: both;
+    display: block;
+    width: 1220px;
+}
+
+div.OneThirdColumn,
+div.OneThirdSingleColumn {
+    display: block;
+    float: left;
+    margin: 0 20px 0 0;
+    width: 380px;
+}
+
+div.OneThirdSingleColumn {
+    float: none;
+    margin: 0 auto;
+}
+
+div.TwoThirdsColumn {
+    display: block;
+    float: left;
+    width: 780px;
+}
+
+div.ContentColumn.last {
+    margin-right: 0;
+}
+
+.ContentColumn:not(:first-child) {
+    padding-top:0;
+}
+
+#ContentBranding {
+    display: none;
+}
+
+
+
+/* CONTENT
+-------------------------------------------------------------- */
+
+/* General Styles */
+body {
+    background: #202b35 url("https://dl.dropboxusercontent.com/u/251256/GameBanana/uber-v4/img/bg-francis.jpg") center top no-repeat;
+    font-family: 'Open Sans', Verdana, Geneva, sans-serif;
+}
+
+body article {
+    font-family: 'Open Sans', Verdana, Geneva, sans-serif;
+}
+
+a {
+    color: #ffaf1a;
+}
+
+
+/* Section Menu (top bar) */
+#SectionLinks {
+    background: #2f4150;
+    border-bottom: 5px solid #5e7884;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+#SectionLinks > ul {
+    margin: 0 auto;
+    width: 1200px;
+}
+
+#SectionLinks .sf-menu > li {
+    display: inline;
+    float: left;
+}
+
+#SectionLinks .sf-menu li {
+    background: none;
+}
+
+.GenericSuperfish .sf-menu > li img[src$="drop_down.gif"] {
+    float: right;
+    margin: 10px 0 0 5px;
+}
+
+#SectionLinks .sf-menu li:hover ul,
+#sectionLinks .sf-menu li ul,
+#SectionLinks .sf-menu .sfHover ul {
+    top: 40px;
+    border-top: 5px solid #5e7884;
+}
+
+.GenericSuperfish .sf-menu li.TitleOnly,
+.GenericSuperfish .sf-menu a {
+    color: #fff;
+    padding: 9.5px 10px;
+}
+
+.GenericSuperfish .sf-menu a:hover {
+    color: #fff;
+}
+
+.GenericSuperfish .sf-menu > li > a:hover {
+    background: #5e7884;
+}
+
+.GenericSuperfish .sf-menu li li {
+    background: #2f4150!important;
+    border-bottom: none;
+}
+
+.GenericSuperfish .sf-menu li li:hover {
+    background: #4e646e!important;
+}
+
+.GenericSuperfish .sf-menu li.sfHover {
+    background: #5e7884!important;
+}
+
+
+/* Branding */
+div#CoreStrip {
+    background: rgba(23,23,23,0.5);
+    margin: 0;
+    padding: 20px;
+}
+
+div#Navigator {
+    margin:0 181px;
+    height: auto;
+}
+
+#NavigatorTabs li {
+    background: #2f4150;
+}
+
+#NavigatorTabs li:hover,
+#NavigatorTabs li.ActiveTab {
+    background: #748a94;
+}
+
+#NavigatorTabs li.TabHasUpdates {
+    background: #b7393c;
+    border: none;
+}
+
+#NavigatorPanes > li {
+    box-shadow:0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+#NavigatorPanes h4 {
+    background: #748a94;
+    color: #fff;
+    font-family: "Roboto Condensed", Verdana, Geneva, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+}
+
+#NavigatorPanes article {
+    background: #2f4150;
+}
+
+div#SiteSearch {
+    right: 20px;
+    top: 18px;
+}
+
+div#SiteSearch input {
+    width: 223px;
+}
+
+div#SiteSearch button {
+    background: #5893bc url("https://dl.dropboxusercontent.com/u/251256/GameBanana/uber-v4/img/search.png") center 6px no-repeat;
+    box-shadow: none;
+    padding: 3px 10px;
+    text-indent: -9999px;
+    width: 55px;
+}
+
+div#SiteSearch button:hover {
+    background-color: #69a7d2;
+}
+
+#PageTitle {
+    background: url("https://dl.dropboxusercontent.com/u/251256/GameBanana/uber-v4/img/logo.png") center center no-repeat;
+    display: block;
+    height: 70px;
+    margin: 0 auto 30px;
+    text-indent: -9999px;
+    width: 244px;
+}
+
+
+/* Dropdown Menus */
+nav#DropdownMenuSubNavigator {
+    background: none;
+    margin: 0 auto 50px;
+    padding: 0;
+    width: 450px;
+}
+
+#DropdownMenuSubNavigator .sf-menu > li {
+    background: #2f4150;
+    padding: 6px 10px;
+}
+
+#DropdownMenuSubNavigator .sf-menu li:hover ul,
+#DropdownMenuSubNavigator .sf-menu li.sfHover ul {
+    top: 31px;
+}
+
+
+/* Forms */
+
+
+
+/* MODULES
+-------------------------------------------------------------- */
+
+/* Common Module Styles */
+div.Module {
+    margin-bottom: 20px;
+}
+
+div.Module > h3,
+div#SiteSearch fieldset button,
+.GenericSuperfish .sf-menu li {
+    font-family: "Roboto Condensed", Verdana, Geneva, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.3);
+}
+
+.GenericSuperfish .sf-menu li {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+div.Module > h3 {
+    background: #748a94;
+    color: #fff;
+    padding: 9px 10px;
+    text-align: center;
+}
+
+.Module > h3 img {
+    display: none;
+    margin-top: 3px;
+}
+
+div.Module > h3 a {
+    color: #fff;
+}
+
+div.Module div.Content,
+div.Module.MultipleRowListModule div.Content {
+    background: #2f4150;
+    padding: 20px;
+}
+
+div.GenericPreviewListModule li {
+    border-bottom: none;
+    padding: 20px;
+}
+
+.GenericPreviewListModule li:nth-child(2n) {
+    background: #232d36;
+}
+
+.MultipleRowListModule .ListControls {
+    margin: 0;
+}
+
+img.PreviewImage {
+    width: 240px;
+    box-shadow:0 2px 5px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s ease-in-out;
+}
+
+#Wrapper a img.PreviewImage:hover {
+    box-shadow:0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Message Form Module */
+#PostAddFormRequesterModule .Modal {
+    background:#2f4150;
+    margin-top:-42px;
+    position:relative;
+}
+
+div.Module.PostAddFormModule {
+    margin:0;
+}
+
+#PostsListModule .Modal .Content,
+div.Module.PostAddFormModule div.Content {
+    margin:0!important;
+    padding:0;
+}
+
+div.Module.PostQuoteFormModule div.Content fieldset.Submit {
+    padding:0 0 22px;
+}
+
+div.Module.PostAddFormModule div.Content fieldset.Submit {
+    padding:0 0 2px;
+}
+
+div.Module.PostQuoteFormModule #Article,
+div.Module.PostAddFormModule #Article {
+    border:none;
+    padding:0 0 0px;
+}
+
+div.Module.PostQuoteFormModule textarea,
+div.Module.PostAddFormModule textarea {
+    box-sizing:border-box;
+    height:170px;
+    min-height:100px;
+    resize:vertical;
+    width:100%;
+    margin-bottom:10px;
+}
+
+div.Module.PostQuoteFormModule #Article .SmallButton,
+div.Module.PostAddFormModule #Article .SmallButton {
+    float:right;
+    margin:0 0 20px;
+}
+
+#PostsListModule .Modal .Modal,
+#PostAddFormModule .Modal {
+    margin:20px 0;
+    padding:0;
+}
+
+#PostsListModule .Modal .Modal .Contents {
+    background:#1c2227;
+}
+
+#PostsListModule .Modal .Modal .CloseModal,
+#PostAddFormModule .Modal .CloseModal {
+    position:absolute;
+    margin-top:-18px;
+}
+
+#PostsListModule .Modal .Modal article,
+#PostAddFormModule .Modal article {
+    background:#1c2227;
+    padding: 15px 90px 1px 15px;
+}
+
+div.Module.PostQuoteFormModule legend,
+div.Module.PostAddFormModule legend,
+div.Module.PostQuoteFormModule .InputHelp,
+div.Module.PostAddFormModule .InputHelp,
+div.Module.PostQuoteFormModule #IsAnonymous,
+div.Module.PostAddFormModule #IsAnonymous {
+    display:none;
+}
+
+div.Module.PostQuoteFormModule .Submit button,
+div.Module.PostAddFormModule .Submit button {
+    display:block;
+    width:100%;
+}
+
+div.Modal .Contents {
+    margin-top:-35px;
+}
+
+/* Messages Module */
+div#PostsListModule div.Content {
+    padding: 0;
+}
+
+#PostsListModule div.Content > ul > li {
+    border-bottom: none;
+    position: relative;
+}
+
+#PostsListModule div.PostHeader {
+    background: #232d36;
+    padding: 20px;
+}
+
+#PostsListModule div.PostHeader div.PostLabels,
+#PostsListModule .LabelState {
+    margin:0;
+}
+
+#PostsListModule div.PostHeader div.PostLabels {
+    margin-top:6px;
+}
+
+#PostsListModule article {
+    padding: 20px 20px 40px;
+}
+
+#PostsListModule article header {
+    margin-bottom: 20px;
+}
+
+#PostsListModule .LabelState {
+    border-width:2px;
+    font-family: "Roboto Condensed", Verdana, Geneva, sans-serif;
+    letter-spacing: 0.1em;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+#PostsListModule article .LabelStat.Date {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Open Sans', Verdana, Geneva, sans-serif;
+}
+
+#PostsListModule .PostTools {
+    position: absolute;
+    right: 20px;
+    top: 110px;
+}
+
+#PostsListModule .PostTools input {
+    display:none;
+}
+
+
+/* Message Styles */
+body article p {
+    margin: 0 0 18px;
+    padding: 0;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+body article blockquote {
+    background: rgba(54,122,175,0.03);
+    background: rgba(255,255,255,0.05);
+    background: rgba(0,0,0,0.15);
+    border: none;
+    padding: 15px;
+    margin: 18px 0 18px;
+    opacity: 1;
+    font-style: normal;
+}
+
+body article blockquote blockquote {
+
+}
+
+body article blockquote p:first-child {
+    margin-bottom: 8px;
+}
+
+body article blockquote p:first-child strong:first-child {
+    color: #fff;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+body article blockquote p:first-child strong:first-child a {
+    font-weight: bold;
+}
+
+body article blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+#PostsListModule ul.PostStamps {
+    padding: 0;
+    margin: 18px 0 10px;
+}
+
+#PostsListModule ul.PostStamps li {
+    background: rgba(0,0,0,0.25);
+    margin: 0 5px 5px 0;
+    padding:5px 10px 5px 5px;
+}
+#PostsListModule ul.PostStamps li:hover {
+    background: rgba(0,0,0,0.35);
+}
+
+
+
+/* OTHER GAMEBANANA STYLES
+-------------------------------------------------------------- */
+
+/* Buttons */
+button,
+.ButtonLike {
+    background:#5893bc;
+    border:none;
+    color:#fff;
+    font-family: "Open Sans", Verdana, Geneva, sans-serif;
+    padding:8px 15px;
+    font-weight:;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.3);
+    text-transform:uppercase;
+    /*box-shadow:0 2px 0px #3c5d75;*/
+}
+button:hover,
+.ButtonLike:hover {
+    background:#69a7d2;
+    border:none;
+    color:#fff!important;
+}
+
+.SmallButton,
+.CloseModal {
+    color:#fff!important;
+    font-weight:normal;
+    font-size:12px!important;
+    text-shadow:none;
+    box-shadow:0 0px 2px rgba(0,0,0,0.25);
+    padding:4px 10px;
+}
+
+.CloseModal {
+    background:#bc5858;
+}
+.CloseModal:hover {
+    background:#c87373;
+}
+
+.PostTools .ButtonLike {
+    background:#232d36;
+    padding:3px!important;
+    box-shadow:none;
+}
+
+.PostTools .ButtonLike:hover {
+    background:#181f24;
+}
+
+
+/* Tooltips */
+.tooltipster-default {
+    background: #1b2025;
+}
+
+.tooltipster-base {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 5px;
+}
+
+
+/* Modals */
+#PostsListModule .Modal {
+    background: #273743;
+    margin: 0;
+    padding: 20px 20px 0;
+    position: relative;
+}
+
+#PostsListModule .Modal .Content {
+    background: #273743;
+    margin: 10px 0;
+}
+
+#PostsListModule .Modal article {
+    padding: 0 0 20px;
+}
+
+.Modal .Toolbar li {
+    background: none;
+}
+
+.Modal .Submit {
+    padding: 20px 0;
+}
+
+
+/* Stamps */
+#PostsListModule fieldset#Stamps {
+    padding: 0;
+}
+
+#PostsListModule ul.PostStamps {
+    margin: 18px 0 10px;
+    padding: 0;
+}
+
+#PostsListModule ul.PostStamps li {
+    background: rgba(0,0,0,0.25);
+    margin: 0 5px 5px 0;
+    padding: 5px 10px 5px 5px;
+}
+#PostsListModule ul.PostStamps li:hover {
+    background: rgba(0,0,0,0.35);
+}
+
+#PostsListModule .Modal div.StampsForm {
+    width:640px;
+}
+
+#PostsListModule div.FullStampsDisplay li.Stamp div,
+#PostsListModule .Modal div.StampsForm label {
+    background: rgba(0,0,0,0.25);
+    margin: 0 5px 5px 0;
+    padding: 5px 10px 5px 5px;
+}
+
+#PostsListModule .Modal div.StampsForm label {
+    background: #232d36;
+    border-color: transparent;
+}
+
+#PostsListModule .Modal div.StampsForm label.Checked,
+#PostsListModule .Modal div.StampsForm label:hover {
+    background: #596d78;
+}
+
+#PostsListModule div.FullStampsDisplay li.Stamp div,
+#PostsListModule .Modal div.StampsForm label span {
+    font-size: 14px;
+}
+
+
+
+/* THIRD PARTY MODULES
+-------------------------------------------------------------- */
+
+/* About Member by Yogensia */
+#tpm__sYogContactInfo ul {
+    padding: 0!important;
+}
+
+
+/* Contact Links by Yogensia */
+#tpm__sYogContactInfo li {
+    opacity: 0.7;
+}
+#tpm__sYogContactInfo li:hover {
+    opacity: 1;
+}
