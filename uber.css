@@ -18,6 +18,7 @@ Document Outline:
   - Layout
 - CONTENT
   - General Styles
+  - Network Links
   - Section Menu (top bar)
   - Branding
   - Dropdown Menus
@@ -221,6 +222,35 @@ a {
 }
 
 
+/* Network Links */
+#NetworkLinks {
+    background: none;
+    position: absolute;
+    z-index: 2;
+}
+
+#NetworkLinks li:not(:first-child) {
+    display: none;
+}
+
+#NetworkLinks #GamebananaTab {
+    background: none;
+    margin-top: 3px;
+    padding-left: 20px;
+}
+
+#NetworkLinks #GamebananaTab a {
+    background: url(https://dl.dropboxusercontent.com/u/251256/GameBanana/uber-v4/img/gb-logo.png) center center no-repeat;
+    display: block;
+    height: 35px;
+    width: 291px;
+}
+
+#NetworkLinks li:first-child a img {
+    display: none;
+}
+
+
 /* Section Menu (top bar) */
 #SectionLinks {
     background: #2f4150;
@@ -293,7 +323,7 @@ div#CoreStrip {
 }
 
 div#Navigator {
-    margin:0 181px;
+    margin: 0 181px 0 472px;
     height: auto;
 }
 
