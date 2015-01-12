@@ -366,18 +366,18 @@ div#SiteSearch {
 
 div#SiteSearch input {
     width: 223px;
+    border-radius: 3px;
+    width: 264px;
+}
+div#SiteSearch input:hover,
+div#SiteSearch input:focus {
+    border-color: #87a7b6;
 }
 
-div#SiteSearch button {
-    background: #5893bc url("https://dl.dropboxusercontent.com/u/251256/GameBanana/uber-v4/img/search.png") center 6px no-repeat;
-    box-shadow: none;
+div#SiteSearch img {
     padding: 3px 10px;
-    text-indent: -9999px;
-    width: 55px;
-}
-
-div#SiteSearch button:hover {
-    background-color: #69a7d2;
+    top: 4px;
+    right: 4px;
 }
 
 #PageTitle {
@@ -450,6 +450,10 @@ div.Module > h3 {
 
 div.Module > h3 a {
     color: #fff;
+}
+
+.Module .Content ul {
+    padding: 0;
 }
 
 div.Module div.Content,
@@ -629,14 +633,14 @@ div#PostsListModule div.Content {
 
 
 /* Message Styles */
-body article p {
+#PostsListModule article p {
     margin: 0 0 18px;
     padding: 0;
     font-size: 14px;
     line-height: 18px;
 }
 
-body article blockquote {
+#PostsListModule article blockquote {
     background: rgba(54,122,175,0.03);
     background: rgba(255,255,255,0.05);
     background: rgba(0,0,0,0.15);
@@ -647,25 +651,25 @@ body article blockquote {
     font-style: normal;
 }
 
-body article blockquote blockquote {
+#PostsListModule article blockquote blockquote {
 
 }
 
-body article blockquote p:first-child {
+#PostsListModule article blockquote p:first-child {
     margin-bottom: 8px;
 }
 
-body article blockquote p:first-child strong:first-child {
+#PostsListModule article blockquote p:first-child strong:first-child {
     color: #fff;
     font-size: 14px;
     font-weight: normal;
 }
 
-body article blockquote p:first-child strong:first-child a {
+#PostsListModule article blockquote p:first-child strong:first-child a {
     font-weight: bold;
 }
 
-body article blockquote p:last-child {
+#PostsListModule article blockquote p:last-child {
     margin-bottom: 0;
 }
 
