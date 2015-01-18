@@ -326,12 +326,18 @@ div#CoreStrip {
 }
 
 div#Navigator {
-    margin: 0 181px 0 472px;
     height: auto;
+    margin: 0;
+    width: 100%;
+}
+
+#NavigatorTabs {
+    text-align: center;
 }
 
 #NavigatorTabs li {
     background: #2f4150;
+    display: inline-block;
 }
 
 #NavigatorTabs li:hover,
