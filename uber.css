@@ -292,6 +292,10 @@ a {
     padding: 9.5px 10px;
 }
 
+.GenericSuperfish .sf-menu li.TitleOnly {
+    cursor: default;
+}
+
 .GenericSuperfish .sf-menu a:hover {
     color: #fff;
 }
