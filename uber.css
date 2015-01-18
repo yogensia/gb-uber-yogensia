@@ -22,7 +22,6 @@ Document Outline:
   - Section Menu (top bar)
   - Branding
   - Dropdown Menus
-  - Forms
 - MODULES
   - Common Module Styles
   - Submission Modules
@@ -395,21 +394,22 @@ nav#DropdownMenuSubNavigator {
     background: none;
     margin: 0 auto 50px;
     padding: 0;
-    width: 460px;
+    text-align: center;
+    width: 100%;
 }
 
 #DropdownMenuSubNavigator .sf-menu > li {
     background: #2f4150;
+    display: inline-block;
+    margin: 0 2px;
     padding: 6px 10px;
 }
 
 #DropdownMenuSubNavigator .sf-menu li:hover ul,
 #DropdownMenuSubNavigator .sf-menu li.sfHover ul {
-    top: 31px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    top: 29px;
 }
-
-
-/* Forms */
 
 
 
