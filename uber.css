@@ -282,6 +282,7 @@ a {
 #SectionLinks .sf-menu li:hover ul,
 #sectionLinks .sf-menu li ul,
 #SectionLinks .sf-menu .sfHover ul {
+    box-shadow:0 5px 15px rgba(0, 0, 0, 0.25);
     border-top: 5px solid #5e7884;
     top: 38px;
 }
