@@ -146,7 +146,7 @@ textarea:focus {
 
 /* Layout */
 div#Wrapper {
-    padding-top: 42px;
+    padding-top: 43px;
     width: 1220px;
 }
 
@@ -282,14 +282,15 @@ a {
 #SectionLinks .sf-menu li:hover ul,
 #sectionLinks .sf-menu li ul,
 #SectionLinks .sf-menu .sfHover ul {
-    top: 40px;
     border-top: 5px solid #5e7884;
+    top: 38px;
 }
 
 .GenericSuperfish .sf-menu li.TitleOnly,
 .GenericSuperfish .sf-menu a {
     color: #fff;
-    padding: 9.5px 10px;
+    height: 18px;
+    padding: 10px;
 }
 
 .GenericSuperfish .sf-menu li.TitleOnly {
