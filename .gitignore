@@ -1,5 +1,5 @@
-# exclude SublimeText FTPSync Settings file
-ftpsync.settings
+# exclude SublimeText settings files
+*.settings*
 
 # exclude images directory
 img/*
