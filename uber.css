@@ -208,7 +208,7 @@ div.ContentColumn.last {
 
 /* General Styles */
 body {
-    background: #202b35 url("https://dl.dropboxusercontent.com/u/251256/GameBanana/uber-v4/img/bg-francis.jpg") center top no-repeat;
+    background: #202b35 url("http://files.gamebanana.com/bitpit/bg-francis.jpg") center top no-repeat;
     font-family: 'Open Sans', Verdana, Geneva, sans-serif;
 }
 
@@ -239,7 +239,7 @@ a {
 }
 
 #NetworkLinks #GamebananaTab a {
-    background: url(https://dl.dropboxusercontent.com/u/251256/GameBanana/uber-v4/img/gb-logo.png) center center no-repeat;
+    background: url("http://files.gamebanana.com/bitpit/gb-logo.png") center center no-repeat;
     display: block;
     height: 35px;
     width: 291px;
@@ -406,7 +406,7 @@ div#SiteSearch img {
 }
 
 #PageTitle {
-    background: url("https://dl.dropboxusercontent.com/u/251256/GameBanana/uber-v4/img/logo.png") center center no-repeat;
+    background: url("http://files.gamebanana.com/bitpit/logo_32.png") center center no-repeat;
     display: block;
     height: 70px;
     margin: 0 auto 30px;
