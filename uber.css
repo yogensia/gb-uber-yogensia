@@ -159,7 +159,6 @@ div#MainContent {
 
 div#ColumnGrid {
     background: rgba(23,23,23,0.5);
-    overflow: hidden;
     padding: 20px 20px 0;
     width: 1180px;
 }
@@ -670,7 +669,7 @@ div#PostsListModule div.Content {
     background: rgba(54,122,175,0.03);
     background: rgba(255,255,255,0.05);
     background: rgba(0,0,0,0.15);
-    border: none;
+    border-left: 3px solid #748a94;
     padding: 15px;
     margin: 18px 0 18px;
     opacity: 1;
