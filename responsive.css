@@ -1,0 +1,125 @@
+/*
+
+Yogensia's UberStyle Responsive Non-Sense for GameBanana
+http://gamebanana.com/members/1328950
+
+Licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+http://creativecommons.org/licenses/by-nc-sa/3.0/
+
+Document Outline:
+-----------------
+
+- HIDE CLUTTER
+- RESET GB ELEMENTS
+- GENERAL
+  - Clearfix
+  - Common Elements
+  - Layout
+- CONTENT
+  - General Styles
+  - Network Links
+  - Section Menu (top bar)
+  - Branding
+  - Dropdown Menus
+- MODULES
+  - Common Module Styles
+  - Submission Modules
+  - About Module (third party)
+  - Social Links Module (third party)
+  - Staff Module
+  - Buddies and Subscribers Modules
+  - PMs and Subscribe Button
+  - Latest Visitors Module
+  - Add Message Button
+  - Messages Module
+  - Message Styles
+- OTHER GAMEBANANA STYLES
+  - Buttons
+  - Modals
+  - Tooltips
+  - Stamps
+- THIRD PARTY MODULES
+- WEBKIT SCROLLBAR
+
+*/
+
+
+@media only screen and (max-width: 1000px),
+only screen and (max-device-width: 1000px) {
+
+/* Temp hides */
+
+#HeaderWrapper,
+#SectionLinks,
+div#CoreStrip,
+nav#DropdownMenuSubNavigator {
+  display:none;
+}
+
+.Tooltip,
+.tooltipster-base {
+    display:none!important;
+}
+
+
+/* Submission Modules
+-------------------------------------------------------------- */
+
+html {
+    width:100%;
+}
+
+body {
+
+    padding: 0;
+    /*zoom: 2.2;*/
+}
+
+body div#Wrapper {
+    width: 320px;
+    margin: 0 auto;
+}
+
+#Wrapper div#MainContent {
+    width: 100%;
+}
+
+#Wrapper div#MainContent {
+    padding-bottom: 0;
+}
+
+#Wrapper div#ColumnGrid {
+    padding: 10px 10px 0;
+}
+
+#Wrapper div#ColumnGrid,
+#Wrapper div.FullColumn {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#Wrapper div.OneThirdColumn,
+#Wrapper div.OneThirdSingleColumn,
+#Wrapper div.TwoThirdsColumn {
+    float: none;
+    width: 100%;
+}
+
+#Wrapper div.Module {
+  margin-bottom: 10px;
+}
+
+div.GenericPreviewListModule li {
+    display: none;
+}
+
+div.GenericPreviewListModule li:nth-child(1),
+div.GenericPreviewListModule li:nth-child(2) {
+    display: list-item;
+}
+
+#Wrapper #ContentContact {
+    /*display: none;*/
+}
+
+}

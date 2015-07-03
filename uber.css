@@ -9,7 +9,7 @@ http://creativecommons.org/licenses/by-nc-sa/3.0/
 Document Outline:
 -----------------
 
-- CUSTOM FONTS
+- INCLUDES
 - HIDES
 - RESET GB ELEMENTS
 - GENERAL
@@ -46,8 +46,11 @@ Document Outline:
 
 
 
-/* CUSTOM FONTS
+/* INCLUDES
 -------------------------------------------------------------- */
+
+/* Responsive Styles (WiP) */
+@import url(http://yogensia.com/gamebanana/uber-yogensia/responsive.css);
 
 /* Roboto Condensed (headlines) */
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Open+Sans:400italic,700italic,400,700);
@@ -59,6 +62,7 @@ Document Outline:
 
 
 /* Hide Ads */
+#AdStrip,
 div#TopBanner,
 div#AtfSquareBanner,
 div#BtfSquareBanner,
@@ -146,14 +150,20 @@ textarea:focus {
 
 /* Layout */
 div#Wrapper {
-    padding-top: 43px;
+    position: static;
     width: 1220px;
+}
+
+#HeaderWrapper {
+    position: absolute;
+    left: 0;
+    width: 100%;
 }
 
 div#MainContent {
     border-radius: 5px 5px 0;
     margin: 0 auto;
-    padding: 50px 0 60px;
+    padding: 150px 0 60px;
     width: 1220px;
 }
 
@@ -221,13 +231,15 @@ a {
 
 
 /* Network Links */
-#NetworkLinks {
-    background: none;
+#Header {
+    background: rgba(0,0,0,0.4);
     position: absolute;
+    width: 100%;
+    padding: 43px 0 0 0;
     z-index: 2;
 }
 
-#NetworkLinks li:not(:first-child) {
+#NetworkLinks li:not(:first-child):not(:last-child) {
     display: none;
 }
 
@@ -246,6 +258,18 @@ a {
 
 #NetworkLinks li:first-child a img {
     display: none;
+}
+
+#SiteSearch {
+    display: block;
+    position: absolute;
+    padding: 11px 0 0 0;
+    top: 56px;
+    margin-left: 589px;
+}
+
+#SiteSearch fieldset input {
+    width: 245px;
 }
 
 
@@ -321,9 +345,18 @@ a {
 
 /* Branding */
 div#CoreStrip {
-    background: rgba(23,23,23,0.5);
+    background: none;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    z-index: 0;
+    overflow:hidden;
+}
+
+#NetworkLinks {
+    background: none;
+    width: 1220px;
+    margin: 0 auto;
+    z-index: 10;
 }
 
 #GuestLinks {
@@ -341,6 +374,8 @@ div#Navigator {
     height: auto;
     margin: 0;
     width: 100%;
+    position: absolute;
+    top: 63px;
 }
 
 #NavigatorTabs {
@@ -404,7 +439,12 @@ div#SiteSearch img {
     right: 4px;
 }
 
-#PageTitle {
+#PageTitleWrapper {
+    background: none;
+    padding: 0;
+}
+
+#PageTitleWrapper h1 {
     background: url("http://files.gamebanana.com/bitpit/logo_32.png") center center no-repeat;
     display: block;
     height: 70px;
