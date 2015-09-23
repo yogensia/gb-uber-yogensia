@@ -163,7 +163,7 @@ div#Wrapper {
 div#MainContent {
     border-radius: 5px 5px 0;
     margin: 0 auto;
-    padding: 350px 0 60px;
+    padding: 400px 0 60px;
     width: 1220px;
 }
 
@@ -239,14 +239,13 @@ a {
     z-index: 2;
 }
 
-#NetworkLinks li:not(:first-child):not(:last-child) {
+#NetworkLinks li:not(:first-child) {
     display: none;
 }
 
 #NetworkLinks #GamebananaTab {
     background: none;
     margin-top: 3px;
-    padding-left: 20px;
 }
 
 #NetworkLinks #GamebananaTab a {
@@ -260,16 +259,13 @@ a {
     display: none;
 }
 
-#SiteSearch {
-    display: block;
-    position: absolute;
-    padding: 11px 0 0 0;
-    top: 15px;
-    margin-left: 589px;
+#SearchPane input {
+    border-radius: 2px;
 }
 
-#SiteSearch fieldset input {
-    width: 245px;
+#SearchPane button {
+    border-radius: 2px;
+    padding: 4px 10px;
 }
 
 
@@ -357,6 +353,7 @@ div#CoreStrip {
     width: 1220px;
     margin: 0 auto;
     z-index: 10;
+    text-align: center;
 }
 
 #GuestLinks {
@@ -372,10 +369,8 @@ div#CoreStrip {
 
 div#Navigator {
     height: auto;
-    margin: 0;
+    margin: 0 0 20px;
     width: 100%;
-    position: absolute;
-    top: 18px;
 }
 
 #NavigatorTabs {
@@ -466,19 +461,25 @@ div#SiteSearch img {
 
 /* Dropdown Menus */
 nav#DropdownMenuSubNavigator {
-    background: none;
-    margin: 0 auto 50px;
+    background: rgba(23,23,23,0.5);
+    border-bottom: none;
+    margin: 0 auto;
     padding: 0;
     text-align: center;
     width: 100%;
+    padding: 20px 0;
     position: absolute;
-    top: 280px;
+    top: 312px;
 }
 
 #DropdownMenuSubNavigator .sf-menu > li {
     background: #2f4150;
     display: inline-block;
     margin: 0 2px;
+    padding: 1px;
+}
+
+#DropdownMenuSubNavigator .sf-menu > li.TitleOnly {
     padding: 6px 10px;
 }
 
