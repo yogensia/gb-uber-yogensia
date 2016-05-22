@@ -60,7 +60,6 @@ Document Outline:
 /* HIDES
 -------------------------------------------------------------- */
 
-
 /* Hide Ads */
 #AdStrip,
 div#TopBanner,
@@ -77,13 +76,13 @@ div#SubdomainMenus,
 #FooterBannerWrapper,
 div.ContentColumn.StaticColumn,
 .MultipleRowListModule div.Preview img.Avatar,
-#FooterWrapper,
 #SectionLinks .sf-menu #GameProfilesMenu,
 #SiteSearch #SearchableGames,
-ul#ImportantLinks {
+ul#ImportantLinks,
+.MaximizeMinimizeButton,
+#NavigatorTabs > ul > #SearchTab {
     display: none;
 }
-
 
 /* SEO Hides */
 h2#PageTitle {
@@ -163,7 +162,7 @@ div#Wrapper {
 div#MainContent {
     border-radius: 5px 5px 0;
     margin: 0 auto;
-    padding: 400px 0 60px;
+    padding: 718px 0 30px;
     width: 1220px;
 }
 
@@ -211,6 +210,10 @@ div.ContentColumn.last {
     display: none;
 }
 
+#FooterWrapper {
+    padding-bottom: 10px;
+}
+
 
 
 /* CONTENT
@@ -232,11 +235,20 @@ a {
 
 
 /* Network Links */
-#Header {
+#HeaderWrapper {
     background: rgba(0,0,0,0.4);
+    height: 65px;
     position: absolute;
     width: 100%;
     z-index: 2;
+}
+
+#HeaderWrapper.Fixed {
+    background: #1b2126;
+    border-bottom: 3px solid #748a94;
+    width: 100%;
+    height: 65px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
 }
 
 #NetworkLinks li:not(:first-child) {
@@ -245,27 +257,20 @@ a {
 
 #NetworkLinks #GamebananaTab {
     background: none;
-    margin-top: 3px;
+    margin: 0;
+    padding: 20px;
 }
 
 #NetworkLinks #GamebananaTab a {
-    background: url("http://files.gamebanana.com/bitpit/gb-logo.png") center center no-repeat;
+    background: url("http://files.gamebanana.com/bitpit/gb-logo_2.png") no-repeat;
     display: block;
-    height: 35px;
+    height: 25px;
     width: 291px;
+    overflow:hidden;
 }
 
 #NetworkLinks li:first-child a img {
     display: none;
-}
-
-#SearchPane input {
-    border-radius: 2px;
-}
-
-#SearchPane button {
-    border-radius: 2px;
-    padding: 4px 10px;
 }
 
 
@@ -342,18 +347,20 @@ a {
 /* Branding */
 div#CoreStrip {
     background: none;
-    margin: 0;
     padding: 0;
-    z-index: 0;
-    overflow:hidden;
+}
+
+#HeaderWrapper.Fixed #CoreStrip {
+    width: 100%;
 }
 
 #NetworkLinks {
     background: none;
-    width: 1220px;
     margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 0;
     z-index: 10;
-    text-align: center;
 }
 
 #GuestLinks {
@@ -369,7 +376,7 @@ div#CoreStrip {
 
 div#Navigator {
     height: auto;
-    margin: 0 0 20px;
+    margin: 20px 0 0;
     width: 100%;
 }
 
@@ -377,9 +384,14 @@ div#Navigator {
     text-align: center;
 }
 
-#NavigatorTabs li {
+#NavigatorTabs > ul > li {
     background: #2f4150;
     display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+#NavigatorTabs > ul > li > span:not(.IconSheet) {
+    display: none;
 }
 
 #NavigatorTabs li:hover,
@@ -397,55 +409,112 @@ div#Navigator {
     display: none;
 }
 
+#NavigatorPanes {
+    position: static;
+}
+
 #NavigatorPanes > li {
     box-shadow:0 5px 15px rgba(0, 0, 0, 0.25);
 }
 
-#NavigatorPanes h4 {
+#MessagesPane,
+#SubmissionsPane,
+#StatsPane,
+#RemindersPane,
+#AdminPane,
+#DevHubPane,
+#ModsPane,
+#ContestsPane,
+#MembersPane,
+#ReadablesPane,
+#SubmitPane,
+#PersonalPane,
+#ModdexPane {
+    width: 150px;
+}
+
+#NetworkPane {
+    width: 180px;
+}
+
+#MedalsPane {
+    width: 212px;
+}
+
+#TreehousePane {
+    width: 240px;
+}
+
+#ActivityPane {
+    width: 290px;
+}
+
+#NavigatorPanes > li > h4 {
     background: #748a94;
-    color: #fff;
+    color: #eee;
     font-family: "Roboto Condensed", Verdana, Geneva, sans-serif;
     font-size: 16px;
     font-weight: bold;
     letter-spacing: 0.1em;
     padding: 4px 10px;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.3);
 }
 
 #NavigatorPanes article {
     background: #2f4150;
 }
 
-div#SiteSearch {
-    right: 20px;
-    top: 17px;
+#NavigatorPanes #SearchPane {
+    background: none;
+    box-shadow: none;
+    position: absolute !important;
+    right: 20px !important;
+    top: 18px !important;
+    left: auto !important;
+    display: block !important;
+    width: 291px;
 }
 
-div#SiteSearch input {
-    border-radius: 3px;
-    font-family: 'Open Sans', Verdana, Geneva, sans-serif;
-    font-style: italic;
-    margin-right: 0;
-    padding: 4px 25px 5px 8px;
-    width: 256px;
-}
-div#SiteSearch input:hover,
-div#SiteSearch input:focus {
-    border-color: #87a7b6;
+#NavigatorPanes #SearchPane div {
+    padding: 0;
 }
 
-div#SiteSearch img {
-    padding: 3px 7px;
-    top: 4px;
-    right: 4px;
+#SearchPane input {
+    background: #2f4150 url(https://dl.dropboxusercontent.com/u/251256/GameBanana/uber-v4/img/search.png) no-repeat 6px center;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    opacity: 0.5;
+    padding: 5px 5px 5px 28px;
+    width: 291px;
+}
+
+#SearchPane input:hover {
+    opacity: 0.7;
+}
+
+#SearchPane input:focus,
+#SearchPane input:active {
+    opacity: 1;
+}
+
+#SearchPane button {
+    display: none;
 }
 
 #MainContentHeader {
-    position: relative;
+    position: static;
 }
 
 #PageTitleWrapper {
-    background: none;
+    background: url(http://files.gamebanana.com/bitpit/yog-cover-gradient.png) bottom repeat-x, url(http://files.gamebanana.com/bitpit/yog-cover-pripeaxe.jpg) center;
+    background-size: auto, cover;
     padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 620px;
 }
 
 #PageTitleWrapper h1 {
@@ -455,7 +524,7 @@ div#SiteSearch img {
     text-indent: -9999px;
     width: 100%;
     position:absolute;
-    top: 185px;
+    top: 500px;
 }
 
 
@@ -463,13 +532,15 @@ div#SiteSearch img {
 nav#DropdownMenuSubNavigator {
     background: rgba(23,23,23,0.5);
     border-bottom: none;
+    box-shadow:0 2px 15px rgba(0, 0, 0, 0.15);
     margin: 0 auto;
     padding: 0;
     text-align: center;
     width: 100%;
     padding: 20px 0;
     position: absolute;
-    top: 312px;
+    top: 620px;
+    left: 0;
 }
 
 #DropdownMenuSubNavigator .sf-menu > li {
@@ -495,7 +566,7 @@ nav#DropdownMenuSubNavigator {
 -------------------------------------------------------------- */
 
 /* Common Module Styles */
-div.Module {
+.ContentColumn > .Module {
     margin-bottom: 20px;
 }
 
@@ -516,10 +587,13 @@ div#SiteSearch fieldset button,
 
 div.Module > h3 {
     background: #748a94;
+    border-left: none;
     color: #fff;
+    margin-bottom: 0;
     padding: 9px 10px;
     text-align: center;
     text-transform: uppercase;
+    border-bottom: none;
 }
 
 .Module > h3 img {
@@ -538,6 +612,7 @@ div.Module > h3 a {
 div.Module div.Content,
 div.Module.MultipleRowListModule div.Content {
     background: #2f4150;
+    margin-left: 0;
     padding: 20px;
 }
 
@@ -562,6 +637,10 @@ img.PreviewImage {
 
 #Wrapper a img.PreviewImage:hover {
     box-shadow:0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+div.GenericPreviewListModule li a {
+    max-width: none;
 }
 
 
@@ -655,6 +734,11 @@ div.Modal .Contents {
 }
 
 /* Messages Module */
+.PageNavigation {
+    margin: 0;
+    padding: 15px 0;
+}
+
 div#PostsListModule div.Content {
     padding: 0;
 }
@@ -664,7 +748,7 @@ div#PostsListModule div.Content {
     position: relative;
 }
 
-#PostsListModule div.PostHeader {
+#PostsListModule .Content ul .Post .PostHeader {
     background: #232d36;
     padding: 20px;
 }
@@ -678,12 +762,8 @@ div#PostsListModule div.Content {
     margin-top: 0;
 }
 
-#PostsListModule article {
-    padding: 60px 20px 40px;
-}
-
-#PostsListModule article header {
-    margin-bottom: 20px;
+#PostsListModule .Content ul .Post article {
+    padding: 20px 20px 40px;
 }
 
 #PostsListModule .LabelState {
@@ -698,10 +778,8 @@ div#PostsListModule div.Content {
     margin-top: 13px;
 }
 
-#PostsListModule .LabelStat.Date {
-    position: absolute;
-    left: 20px;
-    top: 112px;
+#PostsListModule .Content ul .Post .LabelStat.Date {
+    padding: 20px 0 0 20px;
     text-transform: uppercase;
     font-size: 12px;
     font-weight: bold;
@@ -710,8 +788,8 @@ div#PostsListModule div.Content {
 
 #PostsListModule .PostTools {
     position: absolute;
-    right: 20px;
-    top: 106px;
+    right: 12px;
+    top: 116px;
 }
 
 #PostsListModule .PostTools input {
@@ -785,7 +863,7 @@ button,
     background:#5893bc;
     border-radius:4px;
     border:none;
-    color:#fff;
+    color:#fff!important;
     font-family: "Open Sans", Verdana, Geneva, sans-serif;
     padding:8px 15px;
     font-weight:;
