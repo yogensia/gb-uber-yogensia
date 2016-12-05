@@ -10,18 +10,27 @@ Document Outline:
 -----------------
 
 - INCLUDES
+  - Google Fonts
+
 - HIDES
+  - Hide Ads
+  - Hide Content
+  - SEO Hides
+  - Tootip Hides
+
 - RESET GB ELEMENTS
+
 - GENERAL
   - Clearfix
-  - Common Elements
-  - Layout
-- CONTENT
   - General Styles
-  - Network Links
-  - Section Menu (top bar)
   - Branding
+  - Navigation Bar
   - Dropdown Menus
+  - Layout
+
+- STATIC CONTENT
+  - Features
+
 - MODULES
   - Common Module Styles
   - Submission Modules
@@ -34,12 +43,15 @@ Document Outline:
   - Add Message Button
   - Messages Module
   - Message Styles
+
 - OTHER GAMEBANANA STYLES
   - Buttons
   - Modals
   - Tooltips
   - Stamps
+
 - THIRD PARTY MODULES
+
 - WEBKIT SCROLLBAR
 
 */
@@ -49,11 +61,8 @@ Document Outline:
 /* INCLUDES
 -------------------------------------------------------------- */
 
-/* Responsive Styles (WiP) */
-@import url(http://yogensia.com/gamebanana/uber-yogensia/responsive.css);
-
-/* Roboto Condensed (headlines) */
-@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Open+Sans:400italic,700italic,400,700);
+/* Google Fonts - Exo 2 & Asap */
+@import url(http://fonts.googleapis.com/css?family=Asap:700italic|Exo+2:400);
 
 
 
@@ -70,6 +79,7 @@ div#SiteSkinWrapper,
 #cpmstar-site-skin-l,
 #cpmstar-site-skin-r,
 
+
 /* Hide Content */
 div#TitleBreadcrumb,
 div#SubdomainMenus,
@@ -79,15 +89,36 @@ div.ContentColumn.StaticColumn,
 #SectionLinks .sf-menu #GameProfilesMenu,
 #SiteSearch #SearchableGames,
 ul#ImportantLinks,
+#DasHeaderLink,
 .MaximizeMinimizeButton,
-#NavigatorTabs > ul > #SearchTab {
-    display: none;
+#NavigatorTabs > ul > #SearchTab,
+li#MedalsTab,
+li#GamesTab,
+#PageTitleWrapper,
+#HeaderWrapper.Fixed #MainContentHeader #PageTitleWrapper,
+#SponsorBrands,
+#SubmissionType,
+.ModuleTools,
+#ApiLinks,
+.IconSheet.Beacon.HelpBeacon,
+li#ChatTab,
+.AffiliatedStudio,
+#PostsListModule .Content ul .Post .PostHeader .Poster small,
+.IsSubmitter {
+	display: none!important;
 }
+
 
 /* SEO Hides */
 h2#PageTitle {
-    position: absolute;
-    text-indent: -9999px;
+	position: absolute;
+	text-indent: -9999px;
+}
+
+
+/* Tooltip Hides */
+.tooltipster-box {
+	display: none;
 }
 
 
@@ -96,14 +127,14 @@ h2#PageTitle {
 -------------------------------------------------------------- */
 
 .Module ul.LogMessages {
-    font-size: 14px;
-    text-align: center;
+	font-size: 14px;
+	text-align: center;
 }
 
 #Wrapper a img:hover {
-    border: none;
-    box-shadow: none;
-    outline: none;
+	border: none;
+	box-shadow: none;
+	outline: none;
 }
 
 
@@ -113,743 +144,932 @@ h2#PageTitle {
 
 /* Clearfix */
 .clearfix:after, .container:after {
-    content: "\0020";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-    overflow: hidden;
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	overflow: hidden;
 }
 .clearfix, .container {
-    display: block;
-}
-
-/* Common Elements */
-a:focus,
-button:focus,
-img:focus,
-input:focus,
-textarea:focus {
-    outline:none;
-}
-
-input[type="text"],
-textarea {
-    background:#1c2227;
-    border-color:#748a94;
-}
-
-input[type="text"]:hover,
-textarea:hover,
-input[type="text"]:focus,
-textarea:focus {
-    border-color:#94b8c8;
+	display: block;
 }
 
 
 /* Layout */
-div#Wrapper {
-    position: static;
-    width: 1220px;
-}
-
-#HeaderWrapper {
-    position: absolute;
-    left: 0;
-    width: 100%;
-}
-
-div#MainContent {
-    border-radius: 5px 5px 0;
-    margin: 0 auto;
-    padding: 718px 0 30px;
-    width: 1220px;
-}
-
-div#ColumnGrid {
-    background: rgba(23,23,23,0.5);
-    padding: 20px 20px 0;
-    width: 1180px;
-}
-
-div.FullColumn {
-    clear: both;
-    display: block;
-    width: 1220px;
-}
-
-div.OneThirdColumn,
-div.OneThirdSingleColumn {
-    display: block;
-    float: left;
-    margin: 0 20px 0 0;
-    padding-top: 0;
-    width: 380px;
-}
-
-div.OneThirdSingleColumn {
-    float: none;
-    margin: 0 auto;
-}
-
-div.TwoThirdsColumn {
-    display: block;
-    float: left;
-    width: 780px;
-}
-
-div.ContentColumn.last {
-    margin-right: 0;
-}
-
-.ContentColumn:not(:first-child) {
-    padding-top:0;
-}
-
-#ContentBranding {
-    display: none;
-}
-
-#FooterWrapper {
-    padding-bottom: 10px;
-}
-
-
-
-/* CONTENT
--------------------------------------------------------------- */
-
-/* General Styles */
 body {
-    background: #202b35 url("http://files.gamebanana.com/bitpit/bg-francis.jpg") center top no-repeat;
-    font-family: 'Open Sans', Verdana, Geneva, sans-serif;
+	padding: 0;
+	background: #1a262e;
+	color: #b2b2b2;
 }
 
-body article {
-    font-family: 'Open Sans', Verdana, Geneva, sans-serif;
+body:before {
+	background: #1a262e url(http://yogensia.com/gamebanana/uber-yogensia/img/bg.png) top center / 100% fixed;
+	content: '';
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	-webkit-filter: blur(5px);
+}
+
+#Wrapper:before {
+	background:url(http://yogensia.com/gamebanana/uber-yogensia/img/bg-noise.png) top center;
+	content: '';
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#Wrapper {
+	z-index:2;
 }
 
 a {
-    color: #ffaf1a;
+	color: #c02029;
+}
+
+a:hover,
+#FooterWrapper #FooterLinks #CorporateLinks a:hover {
+	color: #ffbe64;
+}
+
+a.MemberLink,
+#NavigatorPanes a {
+	color: #ffbe64;
+}
+
+a.MemberLink:hover,
+#NavigatorPanes a:hover {
+	color: #c02029;
+}
+
+.RedColor {
+	color: #c02029;
+	font-weight: normal;
+}
+
+a:hover .RedColor {
+	color: #ffbe64;
+}
+
+div#Wrapper {
+	background: none;
+	box-shadow: none;
+	position: static;
+	width: 1180px;
+}
+
+div#MainContent {
+	border-radius: 5px 5px 0;
+	margin: 0 auto;
+	padding: 71px 0 0;
+	width: 1180px;
+	margin-top: 0!important;
 }
 
 
-/* Network Links */
-#HeaderWrapper {
-    background: rgba(0,0,0,0.4);
-    height: 65px;
-    position: absolute;
-    width: 100%;
-    z-index: 2;
+/* Footer Styles */
+#FooterWrapper {
+	font-family: "Exo 2", sans-serif;
+	padding-bottom: 30px;
+	position: relative;
 }
 
+#FooterWrapper #FooterLinks {
+	background: none;
+	border: none;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#FooterWrapper #FooterLinks li:last-child {
+	display: none;
+}
+
+#FooterWrapper #FooterLinks #CorporateLinks a {
+	font-size: 10px;
+}
+
+#SocialPages a {
+	opacity: 0.8;
+}
+#SocialPages a:hover {
+	opacity: 1;
+}
+
+
+/* Navigation Bar */
+#HeaderWrapper,
 #HeaderWrapper.Fixed {
-    background: #1b2126;
-    border-bottom: 3px solid #748a94;
-    width: 100%;
-    height: 65px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
-}
-
-#NetworkLinks li:not(:first-child) {
-    display: none;
-}
-
-#NetworkLinks #GamebananaTab {
-    background: none;
-    margin: 0;
-    padding: 20px;
-}
-
-#NetworkLinks #GamebananaTab a {
-    background: url("http://files.gamebanana.com/bitpit/gb-logo_2.png") no-repeat;
-    display: block;
-    height: 25px;
-    width: 291px;
-    overflow:hidden;
-}
-
-#NetworkLinks li:first-child a img {
-    display: none;
-}
-
-
-/* Section Menu (top bar) */
-#SectionLinks {
-    background: #2f4150;
-    border-bottom: 5px solid #5e7884;
-    left: 0;
-    position: absolute;
+	background: #212121;
+	border-bottom: 2px solid #b31b23;
+	box-shadow: none;
+	width: 1180px;
+	font-family: "Exo 2", sans-serif;
+	box-shadow: 0 8px 15px -8px rgba(0, 0, 0, 0.55);
+	left: 0;
+	width: 100%;
+	position: fixed;
+    z-index: 9999999;
     top: 0;
-    width: 100%;
-}
-
-#SectionLinks > ul {
-    margin: 0 auto;
-    width: 1200px;
-}
-
-#SectionLinks .sf-menu > li {
-    display: inline;
-    float: left;
-}
-
-#SectionLinks .sf-menu li {
-    background: none;
-}
-
-.GenericSuperfish .sf-menu > li img[src$="drop_down.gif"] {
-    float: right;
-    margin: 10px 0 0 5px;
-}
-
-#SectionLinks .sf-menu li:hover ul,
-#sectionLinks .sf-menu li ul,
-#SectionLinks .sf-menu .sfHover ul {
-    box-shadow:0 5px 15px rgba(0, 0, 0, 0.25);
-    border-top: 5px solid #5e7884;
-    top: 38px;
-}
-
-.GenericSuperfish .sf-menu li.TitleOnly,
-.GenericSuperfish .sf-menu a {
-    color: #fff;
-    height: 18px;
-    padding: 10px;
-}
-
-.GenericSuperfish .sf-menu li.TitleOnly {
-    cursor: default;
-}
-
-.GenericSuperfish .sf-menu a:hover {
-    color: #fff;
-}
-
-.GenericSuperfish .sf-menu > li > a:hover {
-    background: #5e7884;
-}
-
-.GenericSuperfish .sf-menu li li {
-    background: #2f4150!important;
-    border-bottom: none;
-}
-
-.GenericSuperfish .sf-menu li li:hover {
-    background: #4e646e!important;
-}
-
-.GenericSuperfish .sf-menu li.sfHover {
-    background: #5e7884!important;
-}
-
-
-/* Branding */
-div#CoreStrip {
-    background: none;
-    padding: 0;
-}
-
-#HeaderWrapper.Fixed #CoreStrip {
-    width: 100%;
-}
-
-#NetworkLinks {
-    background: none;
-    margin: 0 auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10;
-}
-
-#GuestLinks {
-    height: 24px;
-    text-align: center;
-    width: 100%;
-}
-
-#GuestLinks li {
-    display: inline-block;
-    padding: 3px 5px;
-}
-
-div#Navigator {
     height: auto;
-    margin: 20px 0 0;
-    width: 100%;
-}
-
-#NavigatorTabs {
-    text-align: center;
-}
-
-#NavigatorTabs > ul > li {
-    background: #2f4150;
-    display: inline-block;
-    margin: 0 5px 0 0;
-}
-
-#NavigatorTabs > ul > li > span:not(.IconSheet) {
-    display: none;
-}
-
-#NavigatorTabs li:hover,
-#NavigatorTabs li.ActiveTab {
-    background: #748a94;
-}
-
-#NavigatorTabs li.TabHasUpdates {
-    background: #b7393c;
-    border: none;
-    box-shadow : none;
-}
-
-#NavigatorTabs #GamesTab {
-    display: none;
-}
-
-#NavigatorPanes {
-    position: static;
-}
-
-#NavigatorPanes > li {
-    box-shadow:0 5px 15px rgba(0, 0, 0, 0.25);
-}
-
-#MessagesPane,
-#SubmissionsPane,
-#StatsPane,
-#RemindersPane,
-#AdminPane,
-#DevHubPane,
-#ModsPane,
-#ContestsPane,
-#MembersPane,
-#ReadablesPane,
-#SubmitPane,
-#PersonalPane,
-#ModdexPane {
-    width: 150px;
-}
-
-#NetworkPane {
-    width: 180px;
-}
-
-#MedalsPane {
-    width: 212px;
-}
-
-#TreehousePane {
-    width: 240px;
-}
-
-#ActivityPane {
-    width: 290px;
-}
-
-#NavigatorPanes > li > h4 {
-    background: #748a94;
-    color: #eee;
-    font-family: "Roboto Condensed", Verdana, Geneva, sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    letter-spacing: 0.1em;
-    padding: 4px 10px;
-    text-shadow: 0 1px 0 rgba(0,0,0,0.3);
-}
-
-#NavigatorPanes article {
-    background: #2f4150;
-}
-
-#NavigatorPanes #SearchPane {
-    background: none;
-    box-shadow: none;
-    position: absolute !important;
-    right: 20px !important;
-    top: 18px !important;
-    left: auto !important;
     display: block !important;
-    width: 291px;
 }
 
-#NavigatorPanes #SearchPane div {
-    padding: 0;
+#HeaderWrapper > header,
+#HeaderWrapper.Fixed > header {
+	width: 1180px;
+	margin: 0 auto;
 }
 
-#SearchPane input {
-    background: #2f4150 url(https://dl.dropboxusercontent.com/u/251256/GameBanana/uber-v4/img/search.png) no-repeat 6px center;
-    border: 0;
-    box-sizing: border-box;
-    color: #eee;
-    opacity: 0.5;
-    padding: 5px 5px 5px 28px;
-    width: 291px;
+#HeaderWrapper header > div #HomeLink {
+	background: none;
+	box-shadow: none;
+	margin: 23px 8px 8px -2px;
+	padding: 0;
+	float: left;
 }
 
-#SearchPane input:hover {
-    opacity: 0.7;
+.IconSheet.Logo {
+	background: url(http://yogensia.com/gamebanana/uber-yogensia/img/logo-gb.png);
+	width: 293px;
+	height: 28px;
 }
 
-#SearchPane input:focus,
-#SearchPane input:active {
-    opacity: 1;
+
+/* Public Navigator */
+#PublicNavigator {
+	float: right;
 }
 
-#SearchPane button {
-    display: none;
+#PublicNavigator .NavigatorTabs {
+	background: none;
+	box-shadow: none;
 }
 
-#MainContentHeader {
-    position: static;
+#PublicNavigator .NavigatorTabs li,
+#PublicNavigator .NavigatorTabs #SearchTab {
+	max-height: 69px;
+	height: 69px;
+	padding: 20px 30px;
+	box-sizing: border-box;
+	font-size: 16px;
+	text-transform: uppercase;
+	color: #fff;
 }
 
-#PageTitleWrapper {
-    background: url(http://files.gamebanana.com/bitpit/yog-cover-gradient.png) bottom repeat-x, url(http://files.gamebanana.com/bitpit/yog-cover-pripeaxe.jpg) center;
-    background-size: auto, cover;
-    padding: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 620px;
+#PublicNavigator .NavigatorTabs li:hover,
+#PublicNavigator .NavigatorTabs li.ActiveTab {
+	background: linear-gradient(to bottom, #fc212c 0%,#82171e 100%);
+	box-shadow: none;
 }
 
-#PageTitleWrapper h1 {
-    background: url("http://files.gamebanana.com/bitpit/logo_32.png") center center no-repeat;
-    display: block;
-    height: 70px;
-    text-indent: -9999px;
-    width: 100%;
-    position:absolute;
-    top: 500px;
+#PublicNavigator .NavigatorTabs li > .IconSheet {
+	display: none;
+}
+
+#PublicNavigator .NavigatorTabs #SearchTab input {
+	box-shadow: none;
+	outline: none;
+	border: none;
+	background: none;
+	color: #fff;
+	padding: 0;
+	font-size: 16px;
+	font-family: "Exo 2", sans-serif;
+	text-align: right;
+	border-radius: 0;
+	width: 58px;
+	transition: width ease-out 0.3s;
+}
+
+#HeaderWrapper #PublicNavigator .NavigatorTabs #SearchTab {
+	padding-right: 0;
+}
+
+#PublicNavigator .NavigatorTabs #SearchTab input:focus {
+	width: 180px;
+	box-shadow: 0 2px 0 #636363;
+}
+
+#PublicNavigator .NavigatorTabs #SearchTab input::-moz-placeholder {
+	color: #fff;
+	font-style: normal;
+	font-size: 16px;
+	font-family: "Exo 2", sans-serif;
+	text-transform: uppercase;
+}
+#PublicNavigator .NavigatorTabs #SearchTab input::-ms-input-placeholder {
+	color: #fff;
+	font-style: normal;
+	font-size: 16px;
+	font-family: "Exo 2", sans-serif;
+	text-transform: uppercase;
+}
+#PublicNavigator .NavigatorTabs #SearchTab input::-webkit-input-placeholder {
+	color: #fff;
+	font-style: normal;
+	font-size: 16px;
+	font-family: "Exo 2", sans-serif;
+	text-transform: uppercase;
+}
+
+#PublicNavigator .NavigatorTabs #SearchTab button {
+	box-shadow: none;
+	background: url(http://yogensia.com/gamebanana/uber-yogensia/img/icons.png);
+	background-position: 26px -26px;
+	width: 16px;
+	height: 17px;
+	margin-left: 5px;
+}
+
+#PublicNavigator .NavigatorTabs #SearchTab button span {
+	display: none;
+}
+
+
+/* Member Navigator */
+#MemberNavigator {
+	float: left;
+	margin-top: 22px;
+}
+
+#MemberNavigator .NavigatorTabs > ul > li {
+	background: linear-gradient(to bottom, #373737 0%,#252525 100%);
+	box-shadow: 0 0 0 1px #2e2e2e, inset 0 0 0 1px #141414;
+}
+
+.IconSheet.NavigatorTabIcon {
+	background: url(http://yogensia.com/gamebanana/uber-yogensia/img/icons.png);
+}
+
+.IconSheet.NavigatorTabIcon.PersonalTabIcon {
+	background-position: -3px -3px;
+}
+.IconSheet.NavigatorTabIcon.ActivityTabIcon {
+	background-position: -28px -3px;
+}
+.IconSheet.NavigatorTabIcon.SubmissionsTabIcon {
+	background-position: -52px -3px;
+}
+.IconSheet.NavigatorTabIcon.MessagesTabIcon {
+	background-position: -76px -3px;
+}
+.IconSheet.NavigatorTabIcon.StatsTabIcon {
+	background-position: -99px -3px;
+}
+.IconSheet.NavigatorTabIcon.MedalsTabIcon {
+	background-position: -124px -3px;
+}
+.IconSheet.NavigatorTabIcon.RemindersTabIcon {
+	background-position: -148px -3px;
 }
 
 
 /* Dropdown Menus */
-nav#DropdownMenuSubNavigator {
-    background: rgba(23,23,23,0.5);
-    border-bottom: none;
-    box-shadow:0 2px 15px rgba(0, 0, 0, 0.15);
-    margin: 0 auto;
-    padding: 0;
-    text-align: center;
-    width: 100%;
-    padding: 20px 0;
-    position: absolute;
-    top: 620px;
-    left: 0;
+#DropdownMenuSubNavigator {
+	background: none;
+	display: none;
 }
 
-#DropdownMenuSubNavigator .sf-menu > li {
-    background: #2f4150;
-    display: inline-block;
-    margin: 0 2px;
-    padding: 1px;
+
+/* Branding */
+#ContentBranding {
+	margin: 60px auto;
 }
 
-#DropdownMenuSubNavigator .sf-menu > li.TitleOnly {
-    padding: 6px 10px;
+#YogLogo {
+	background: url(http://yogensia.com/gamebanana/uber-yogensia/img/logo-yog.png);
+	display: block;
+	width: 407px;
+	height: 253px;
 }
 
-#DropdownMenuSubNavigator .sf-menu li:hover ul,
-#DropdownMenuSubNavigator .sf-menu li.sfHover ul {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
-    top: 29px;
+
+/* Layout */
+div#ColumnGrid {
+	padding: 0;
+	width: 1180px;
 }
 
+div.FullColumn {
+	clear: both;
+	display: block;
+	width: 1180px;
+	margin-bottom: 30px;
+}
+
+div.OneThirdColumn,
+div.OneThirdSingleColumn,
+div.OneThirdColumnAlt {
+	display: block;
+	float: left;
+	margin: 0;
+	padding-top: 0;
+	width: 383px;
+}
+
+div.OneThirdSingleColumn {
+	float: none;
+	margin: 0 auto;
+}
+
+div.OneThirdColumnAlt {
+	width: 413px;
+}
+
+div.TwoThirdsColumn {
+	display: block;
+	float: left;
+	width: 767px;
+	margin-left: 30px;
+}
+
+div.ContentColumn.last {
+	margin-right: 0;
+}
+
+.ContentColumn:not(:first-child) {
+	padding-top:0;
+}
+
+#ContentSubmissions {
+	background: #1c1c1c;
+	box-shadow: 0 8px 10px -8px rgba(0, 0, 0, 0.55);
+	margin-bottom: 60px;
+	padding: 30px 30px 0;
+	box-sizing: border-box;
+}
+
+#ContentSubmissions .OneThirdColumn {
+	padding-right: 30px;
+	width: 353px;
+}
+
+#ContentSubmissions .OneThirdColumn.last {
+	padding-right: 0;
+}
+
+#ContentSubmissions .Module {
+	margin: 0;
+}
+
+#ContentSubmissions .Module > h3,
+#ContentSubmissions .PageNavigation {
+	display: none
+}
+
+#SubmissionsHeadlines span {
+	display: block;
+	width: 393px;
+	float: left;
+}
+
+
+
+
+
+/* STATIC CONTENT
+-------------------------------------------------------------- */
+
+/* Features */
+#YogFeatures {
+	background: #1c1c1c;
+	box-shadow: 0 8px 10px -8px rgba(0, 0, 0, 0.55);
+	margin: 0 0 60px;
+	padding: 30px;
+	overflow: hidden;
+	font-family: "Exo 2";
+}
+
+.YogMedia {
+	position: relative;
+}
+
+.YogMediaFigure {
+	background: #242424;
+	display: block;
+	height: 630px;
+	margin-bottom: 30px;
+}
+
+.YogMediaTitle {
+	display: block;
+	margin-bottom:2px;
+	font-size: 24px;
+	font-weight: bold;
+	font-style: italic;
+	font-family: Asap, sans-serif;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.YogMediaBody {
+	display: block;
+	width: 100%;
+}
+
+.YogMediaBody p {
+	margin-bottom: 10px;
+	padding: 0;
+	font-size: 16px;
+	color: #bababa;
+	display: block;
+	width: 100%;
+	white-space: normal;
+	line-height: 1.5em;
+}
+
+.YogFeatureOneColumn .YogMediaBody {
+	background: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	width: 735px;
+	padding: 24px 30px 30px;
+	bottom: 30px;
+	box-sizing: border-box;
+}
+
+.YogFeatureTwoColumns {
+	display: block;
+	width: 545px;
+	float: left;
+}
+
+.YogFeatureTwoColumns {
+	margin-right: 30px;
+}
+.YogFeatureTwoColumns:last-child {
+	margin-right: 0;
+}
+
+.YogFeatureTwoColumns .YogMediaFigure {
+	height: 306px;
+}
+
+.YogMediaActions {
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
+.YogMediaActions li {
+	float: left;
+	list-style: none;
+	margin-right: 15px;
+}
+
+.YogMediaActions li a {
+	background: #c02029;
+	border-radius: 2px;
+	box-shadow: 0 8px 10px -8px rgba(0, 0, 0, 0.55);
+	color: #fff;
+	display: block;
+	padding: 15px;
+	position: relative;
+	text-shadow: 0 2px 2px rgba(0,0,0,0.3);
+}
+
+.YogMediaActions .ActionArtStation a {
+	background: #1597cd;
+}
+
+.YogMediaActions a:hover {
+	background: #da202a;
+}
+
+.YogMediaActions .ActionArtStation a:hover {
+	background: #13aeef;
+}
+
+.YogMediaActions a:active {
+	box-shadow: 0 2px 4px -2px rgba(0, 0, 0, 0.55);
+	top: 1px;
+}
 
 
 /* MODULES
 -------------------------------------------------------------- */
 
 /* Common Module Styles */
-.ContentColumn > .Module {
-    margin-bottom: 20px;
+.ContentColumn > .Module,
+#FullscreenModuleWrapper > .Module,
+.ThirdPartModule {
+	font-family: "Exo 2", sans-serif;
+	margin-bottom: 20px;
 }
 
-div.Module > h3,
-div#SiteSearch fieldset button,
-.GenericSuperfish .sf-menu li {
-    font-family: "Roboto Condensed", Verdana, Geneva, sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    letter-spacing: 0.1em;
-    text-shadow: 0 1px 0 rgba(0,0,0,0.3);
+.Module > h3,
+#PostAddFormRequesterModule:before,
+#SubmissionsHeadlines span {
+	background: none;
+	font-family: Asap, sans-serif;
+	font-weight: bold;
+	font-style: italic;
+	text-align: center;
+	font-size: 24px;
+	letter-spacing: 1px;
+	border: none;
+	margin-bottom: 15px;
+	color: #fff;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	padding: 0;
+	text-transform: uppercase;
 }
 
-.GenericSuperfish .sf-menu li {
-    font-size: 14px;
-    text-transform: uppercase;
+.Module > h3 a,
+#SubmissionsHeadlines span a {
+	color: #fff;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-div.Module > h3 {
-    background: #748a94;
-    border-left: none;
-    color: #fff;
-    margin-bottom: 0;
-    padding: 9px 10px;
-    text-align: center;
-    text-transform: uppercase;
-    border-bottom: none;
+.Module > .Content,
+.MultipleRowListModule > div.Content,
+#Wrapper #tpm__sYogAboutMember .Content {
+	background: #1c1c1c;
+	box-shadow: 0 8px 10px -8px rgba(0, 0, 0, 0.55);
+	padding: 30px;
+	margin-bottom: 30px;
 }
 
-.Module > h3 img {
-    display: none;
-    margin-top: 3px;
+.Module > .Content .PageNavigation {
+	padding: 0;
+
 }
 
-div.Module > h3 a {
-    color: #fff;
+.Module > .Content .PageNavigation ul li {
+	padding: 10px 0;
 }
 
-.Module .Content ul {
-    padding: 0;
+.Module > .Content .PageNavigation ul li:hover {
+	background: none;
 }
 
-div.Module div.Content,
-div.Module.MultipleRowListModule div.Content {
-    background: #2f4150;
-    margin-left: 0;
-    padding: 20px;
+.Module > .Content .PageNavigation:first-child,
+.Module > .Content .PageNavigation label {
+	display: none;
 }
 
-div.GenericPreviewListModule li {
-    border-bottom: none;
-    padding: 20px;
+.Module > .Description {
+    background: #181818;
 }
 
-.GenericPreviewListModule li:nth-child(2n) {
-    background: #232d36;
+#ContentSubmissions .Module > .Content {
+	background: none;
+	box-shadow: none;
+	margin: 0;
 }
 
-.MultipleRowListModule .ListControls {
-    margin: 0;
+.Content dt {
+	display: none;
+}
+
+.Content dd {
+	margin: 0 0 15px;
+	fint-size: 14px;
+	line-height: 1.5em;
+}
+
+.Preview a {
+	width: 100%;
 }
 
 img.PreviewImage {
-    width: 240px;
-    box-shadow:0 2px 5px rgba(0, 0, 0, 0.25);
-    transition: all 0.2s ease-in-out;
+	width: 100%;
+	box-shadow: none;
 }
 
-#Wrapper a img.PreviewImage:hover {
-    box-shadow:0 5px 15px rgba(0, 0, 0, 0.25);
+a.Name {
+	font-size: 16px;
+	text-shadow: 0 2px 3px rgba(0,0,0,0.5);
+	text-transform: uppercase;
+}
+
+div.GenericPreviewListModule div.Preview {
+	width: 100%;
 }
 
 div.GenericPreviewListModule li a {
-    max-width: none;
+	max-width: none;
 }
 
+div.GenericPreviewListModule ul {
+	display:block;
+	background: #1c1c1c;
+	overflow: hidden;
+}
+
+div.GenericPreviewListModule li {
+	background: none;
+	border: none;
+	padding: 0 0 30px;
+}
 
 /* Message Form Module */
-#PostAddFormRequesterModule .Modal {
-    background:#2f4150;
-    margin-top: -35px;
-    position:relative;
+#PostAddFormRequesterModule {
+	margin: 0;
 }
 
-div.Module.PostAddFormModule {
-    margin:0;
+#PostAddFormRequesterModule:before {
+	content: "Messages";
+	display: block;
+	margin: 0 0 15px 0;
 }
 
-#PostsListModule .Modal .Content,
-div.Module.PostAddFormModule div.Content {
-    margin:0!important;
-    padding:0;
+#PostAddFormRequesterModule .Content {
+	margin:0;
+	padding-bottom: 0;
 }
 
-div.Module.PostQuoteFormModule div.Content fieldset.Submit {
-    padding:0 0 22px;
+#Wrapper .AddFormModule .Submit button,
+#Wrapper #PostAddFormRequesterModule .ModalLauncher,
+#Wrapper #PostAddFormRequesterModule .DisabledModalLauncher {
+	width: 100%;
+	padding: 12px 20px 17px;
+	border: none;
+	box-shadow: none;
+	border-radius: 0;
+	background: linear-gradient(to bottom, #fc212c 0%,#82171e 100%);
+	font-size: 16px;
+	font-family: "Exo 2";
+	text-transform: uppercase;
+	box-shadow: 0 8px 10px -10px rgba(0, 0, 0, 0.5);
+	text-shadow: 0 2px 2px rgba(0,0,0,0.3);
+	margin-bottom: 30px;
 }
 
-div.Module.PostAddFormModule div.Content fieldset.Submit {
-    padding:0 0 2px;
+#Wrapper #PostAddFormRequesterModule .ModalLauncher:active {
+	margin-top: 1px;
+	margin-bottom: 29px;
 }
 
-div.Module.PostQuoteFormModule #Article,
-div.Module.PostAddFormModule #Article {
-    border:none;
-    padding:0 0 0px;
+#Wrapper #PostAddFormRequesterModule .DisabledModalLauncher {
+	background: linear-gradient(to bottom, #373737 0%,#252525 100%);
+	box-shadow: 0 8px 10px -10px rgba(0, 0, 0, 0.5);
+	opacity: 1;
+	cursor: default;
 }
 
-div.Module.PostQuoteFormModule textarea,
-div.Module.PostAddFormModule textarea {
-    box-sizing:border-box;
-    height:170px;
-    min-height:100px;
-    resize:vertical;
-    width:100%;
-    margin-bottom:10px;
+#Wrapper #PostAddFormRequesterModule .ModalLauncher .IconSheet,
+#Wrapper #PostAddFormRequesterModule .DisabledModalLauncher .IconSheet {
+	display: none;
 }
 
-div.Module.PostQuoteFormModule #Article .SmallButton,
-div.Module.PostAddFormModule #Article .SmallButton {
-    float:right;
-    margin:0 0 20px;
+#Wrapper #PostAddFormRequesterModule .Modal {
+	padding: 0;
+	margin: 0 0 30px;
+	box-shadow: none;
+	position: relative;
 }
 
-#PostsListModule .Modal .Modal,
-#PostAddFormModule .Modal {
-    margin:20px 0;
-    padding:0;
+#Wrapper #PostAddFormRequesterModule .Modal .Content {
+	padding: 0;
+	box-shadow: none;
 }
 
-#PostsListModule .Modal .Modal .Contents {
-    background:#1c2227;
+#PostsListModule h3 {
+	display: none;
 }
 
-#PostsListModule .Modal .Modal .CloseModal,
-#PostAddFormModule .Modal .CloseModal {
-    position:absolute;
-    margin-top:-18px;
+.Modal .Toolbar li,
+.Modal .Contents {
+	background: none;
 }
 
-#PostsListModule .Modal .Modal article,
-#PostAddFormModule .Modal article {
-    background:#1c2227;
-    padding: 15px 90px 1px 15px;
+.Modal .Toolbar {
+	position: absolute;
+	right: 0;
+	padding: 6px 0 0;
+	z-index: 5;
 }
 
-div.Module.PostQuoteFormModule legend,
-div.Module.PostAddFormModule legend,
-div.Module.PostQuoteFormModule .InputHelp,
-div.Module.PostAddFormModule .InputHelp,
-div.Module.PostQuoteFormModule #IsAnonymous,
-div.Module.PostAddFormModule #IsAnonymous {
-    display:none;
+.MainForm .InputsWrapper fieldset legend {
+	border-bottom: none;
+	padding: 0;
 }
 
-div.Module.PostQuoteFormModule .Submit button,
-div.Module.PostAddFormModule .Submit button {
-    display:block;
-    width:100%;
+.MainForm .InputsWrapper fieldset legend .Title {
+	padding: 0 0 0 10px;
+	font-size: 18px;
+	font-weight: normal;
+	display: none;
 }
 
-div.Modal .Contents {
-    margin-top: -35px;
-    padding:0;
+.MainForm .InputsWrapper fieldset legend .StateLabel.RequiredInput {
+	display: none;
+}
+
+.ContentEditableEditor .InputWrapper .Inserters > h4 {
+	display: none;
+}
+
+#IsAnonymous, #Screenshots {
+	display: none;
+}
+
+.MainForm .InputsWrapper {
+	padding: 0;
+}
+
+.MainForm .InputsWrapper fieldset .InputWrapper {
+	padding: 0;
+	margin: 0;
+}
+
+#AddFormModule .Description {
+	display: none;
+}
+
+.ContentEditableEditor .InputWrapper .Editor {
+	margin: 0;
+	width:100%;
+}
+
+.ContentEditableEditor .InputWrapper .Editor .ViewModes .Wysiwyg .RichText {
+	padding: 10px;
+	box-sizing: border-box;
+	width: 100%;
+	min-height: 200px;
+	font-family: "Exo 2", sans-serif;
+}
+
+.MainForm .Submit {
+	padding: 0;
+}
+
+#Wrapper .AddFormModule .Submit button {
+	width: 125px;
+	margin: 0;
+	padding: 5px 0 10px;
+	margin-bottom:;
+}
+
+#Wrapper .AddFormModule .Submit button .IconSheet {
+	display: none;
 }
 
 /* Messages Module */
-.PageNavigation {
-    margin: 0;
-    padding: 15px 0;
+#PostsListModule > .Content {
+	background: #1c1c1c;
+	padding: 0 30px 30px;
 }
 
-div#PostsListModule div.Content {
-    padding: 0;
-}
-
-#PostsListModule div.Content > ul > li {
-    border-bottom: none;
-    position: relative;
+#PostsListModule .Content ul .Post {
+	border-bottom: none;
 }
 
 #PostsListModule .Content ul .Post .PostHeader {
-    background: #232d36;
-    padding: 20px;
+	background: #212121;
+	border-bottom: 2px solid #b31b23;
+	padding: 10px;
+	margin: 0 0;
+	position: relative;
 }
 
-#PostsListModule div.PostHeader div.PostLabels,
-#PostsListModule .LabelState {
-    margin:0;
+#PostsListModule .Content ul .Post .PostHeader .AvatarWrapper {
+	margin: 0;
 }
 
-#PostsListModule div.PostHeader div.PostLabels {
-    margin-top: 0;
+#PostsListModule .Content ul .Post .PostHeader .AvatarWrapper a {
+	display: block;
 }
 
-#PostsListModule .Content ul .Post article {
-    padding: 20px 20px 40px;
+.Avatar {
+	border: none!important;
 }
 
-#PostsListModule .LabelState {
-    border-width:2px;
-    font-family: "Roboto Condensed", Verdana, Geneva, sans-serif;
-    letter-spacing: 0.1em;
-    margin-top: 5px;
-    text-transform: uppercase;
+#PostsListModule .Content ul .Post .PostHeader .Poster {
+	padding: 0;
+	margin: 0 0 0 10px;
 }
 
-#PostsListModule .LabelState.IsModerator {
-    margin-top: 13px;
+.Poster .MemberLink {
+	padding: 0;
+	display: block;
 }
 
-#PostsListModule .Content ul .Post .LabelStat.Date {
-    padding: 20px 0 0 20px;
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: bold;
-    font-family: 'Open Sans', Verdana, Geneva, sans-serif;
+.Poster .MemberLink img {
+	display: block;
 }
 
-#PostsListModule .PostTools {
-    position: absolute;
-    right: 12px;
-    top: 116px;
+#PostsListModule .Content ul .Post .PostHeader .PostTools {
+	position: absolute;
+	right: 10px;
+	top: 22px;
+	margin: 0;
 }
 
-#PostsListModule .PostTools input {
-    display:none;
+#PostsListModule .Content ul .Post .PostHeader .PostTools button {
+	background: linear-gradient(to bottom, #373737 0%,#252525 100%);
+	box-shadow: 0 0 0 1px #2e2e2e, inset 0 0 0 1px #141414;
+	border-radius: 0;
+	margin: 0.5px;
+	padding: 0;
+	display: block;
+	float: left;
 }
 
+#PostsListModule .Content ul .Post .PostHeader .PostTools button:hover {
+	background: linear-gradient(to bottom, #fc212c 0%,#82171e 100%);
+}
+
+#PostsListModule .Content ul .Post .PostHeader .PostTools input {
+	display: none;
+}
+
+#PostsListModule .Content ul .Post .PostHeader .PostTools .IconSheet {
+	background: url(http://yogensia.com/gamebanana/uber-yogensia/img/icons.png);
+	width: 23px;
+	height: 24px;
+}
+
+#PostsListModule .Content ul .Post .PostHeader .PostTools .IconSheet.EditIcon {
+	background-position: 0 23px;
+}
+
+#PostsListModule .Content ul .Post .PostHeader .PostTools .IconSheet.TrashIcon {
+	background-position: -23px 23px;
+}
+
+#PostsListModule .Content ul .Post .PostHeader .PostTools .IconSheet.QuoteIcon {
+	background-position: -46px 23px;
+}
+
+#PostsListModule .Content ul .Post .PostHeader .PostTools .IconSheet.WithholdIcon {
+	background-position: -69px 23px;
+}
+
+#PostsListModule .Content ul .Post .PostHeader .PostTools .IconSheet.StampIcon {
+	background-position: -92px 23px;
+}
+
+#PostsListModule .Content ul .Post .PostHeader .PostTools .IconSheet.ReportIcon {
+	background-position: -114px 23px;
+}
+
+#PostsListModule .Content ul .Post .Date {
+	color: #ffbe64;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	font-size: 12px;
+	display: block;
+	padding: 0;
+	margin: 20px 0;
+}
 
 /* Message Styles */
-#PostsListModule article p {
-    margin: 0 0 18px;
-    padding: 0;
-    font-size: 14px;
-    line-height: 18px;
+#PostsListModule .Content ul .Post article {
+	font-size: 16px;
+	line-height: 24px;
+	padding: 0 0 30px;
 }
 
-#PostsListModule article blockquote {
-    background: rgba(54,122,175,0.03);
-    background: rgba(255,255,255,0.05);
-    background: rgba(0,0,0,0.15);
-    border-left: 3px solid #748a94;
-    padding: 15px;
-    margin: 0 0 18px;
-    opacity: 1;
-    font-style: normal;
+.RichText blockquote {
+	background: #212121;
+	margin: 0 0 15px 0;
+	font-size: 16px;
+	opacity: 1;
+	border-left: 2px solid #656565;
+	padding: 15px 15px 0;
 }
 
-#PostsListModule article blockquote blockquote {
-
+.RichText blockquote:hover {
+	border-left: 2px solid #c02029;
 }
 
-#PostsListModule article blockquote p:first-child {
-    margin-bottom: 8px;
+.RichText blockquote b {
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: normal;
+	display:block;
+	margin-bottom: -35px;
 }
 
-#PostsListModule article blockquote p:first-child strong:first-child {
-    color: #fff;
-    font-size: 14px;
-    font-weight: normal;
+.RichText blockquote blockquote {
+	margin: 0 15px 15px 0;
 }
 
-#PostsListModule article blockquote p:first-child strong:first-child a {
-    font-weight: bold;
+#PostsListModule .Content ul .Post article .PostStamps:hover {
+	cursor: default;
+	color: #b2b2b2;
 }
 
-#PostsListModule article blockquote p:last-child {
-    margin-bottom: 0;
+#PostsListModule .Content ul .Post article .PostStamps li {
+	background: #171717;
+	padding: 8px 12px;
+	border-radius: 0;
+	box-shadow: none;
+	margin: 0 10px 0 0;
+	cursor: help;
+}
+#PostsListModule .Content ul .Post article .PostStamps li:hover {
+	background: #121212;
 }
 
-#PostsListModule ul.PostStamps {
-    padding: 0;
-    margin: 18px 0 10px;
-}
-
-#PostsListModule ul.PostStamps li {
-    background: rgba(0,0,0,0.25);
-    margin: 0 5px 5px 0;
-    padding:5px 10px 5px 5px;
-}
-#PostsListModule ul.PostStamps li:hover {
-    background: rgba(0,0,0,0.35);
+#PostsListModule .Content ul .Post article footer {
+	display: none;
 }
 
 
@@ -858,139 +1078,12 @@ div#PostsListModule div.Content {
 -------------------------------------------------------------- */
 
 /* Buttons */
-button,
-.ButtonLike {
-    background:#5893bc;
-    border-radius:4px;
-    border:none;
-    color:#fff!important;
-    font-family: "Open Sans", Verdana, Geneva, sans-serif;
-    padding:8px 15px;
-    font-weight:;
-    text-shadow: 0 1px 0 rgba(0,0,0,0.3);
-    text-transform:uppercase;
-    /*box-shadow:0 2px 0px #3c5d75;*/
-}
-button:hover,
-.ButtonLike:hover {
-    background:#69a7d2;
-    border:none;
-    color:#fff!important;
-}
-
-.SmallButton,
-.CloseModal {
-    color:#fff!important;
-    font-weight:normal;
-    font-size:12px!important;
-    text-shadow:none;
-    box-shadow:0 0px 2px rgba(0,0,0,0.25);
-    padding:4px 10px;
-}
-
-.CloseModal {
-    background:#bc5858;
-}
-.CloseModal:hover {
-    background:#c87373;
-}
-
-.PostTools .ButtonLike {
-    background:#232d36;
-    padding:3px!important;
-    box-shadow:none;
-}
-
-.PostTools .ButtonLike:hover {
-    background:#181f24;
-}
-
 
 /* Tooltips */
-.tooltipster-default {
-    background: #1b2025;
-}
-
-.tooltipster-base {
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 5px;
-}
-
-.AvatarTooltip .AffiliatedStudio span {
-    display: none;
-}
-
 
 /* Modals */
-#PostsListModule .Modal {
-    background: #273743;
-    margin: 0;
-    padding: 20px 20px 0;
-    position: relative;
-}
-
-#PostsListModule .Modal .Content {
-    background: #273743;
-    margin: 10px 0;
-}
-
-#PostsListModule .Modal article {
-    padding: 0 0 20px;
-}
-
-.Modal .Toolbar li {
-    background: none;
-    padding-right:0;
-}
-
-.Modal .Submit {
-    padding: 20px 0;
-}
-
 
 /* Stamps */
-#PostsListModule fieldset#Stamps {
-    padding: 0;
-}
-
-#PostsListModule ul.PostStamps {
-    margin: 18px 0 10px;
-    padding: 0;
-}
-
-#PostsListModule ul.PostStamps li {
-    background: rgba(0,0,0,0.25);
-    margin: 0 5px 5px 0;
-    padding: 5px 10px 5px 5px;
-}
-#PostsListModule ul.PostStamps li:hover {
-    background: rgba(0,0,0,0.35);
-}
-
-#PostsListModule .Modal div.StampsForm {
-    width:640px;
-}
-
-#PostsListModule div.FullStampsDisplay li.Stamp div,
-#PostsListModule .Modal div.StampsForm label {
-    background: rgba(0,0,0,0.25);
-    margin: 0 5px 5px 0;
-    padding: 5px 10px 5px 5px;
-}
-
-#PostsListModule .Modal div.StampsForm label {
-    background: #232d36;
-    border-color: transparent;
-}
-
-#PostsListModule .Modal div.StampsForm label.Checked,
-#PostsListModule .Modal div.StampsForm label:hover {
-    background: #596d78;
-}
-
-#PostsListModule div.FullStampsDisplay li.Stamp div,
-#PostsListModule .Modal div.StampsForm label span {
-    font-size: 14px;
-}
 
 
 
@@ -999,14 +1092,37 @@ button:hover,
 
 /* About Member by Yogensia */
 #tpm__sYogContactInfo ul {
-    padding: 0!important;
+	padding: 0!important;
 }
 
 
 /* Contact Links by Yogensia */
 #tpm__sYogContactInfo li {
-    opacity: 0.7;
+	opacity: 0.7;
 }
 #tpm__sYogContactInfo li:hover {
-    opacity: 1;
+	opacity: 1;
+}
+
+
+
+/* WEBKIT SCROLLBAR
+-------------------------------------------------------------- */
+
+::-webkit-scrollbar {
+	background:#181818;
+	height:14px;
+	width:14px;
+}
+
+::-webkit-scrollbar-thumb {
+	background:#b31b23;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background:#d42029;
+}
+
+::-webkit-scrollbar-corner{
+	background-color: #181818;
 }
