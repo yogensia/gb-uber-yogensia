@@ -275,10 +275,10 @@ div#MainContent {
 	left: 0;
 	width: 100%;
 	position: fixed;
-    z-index: 9999999;
-    top: 0;
-    height: auto;
-    display: block !important;
+	z-index: 9999999;
+	top: 0;
+	height: auto;
+	display: block !important;
 }
 
 #HeaderWrapper > header,
@@ -714,7 +714,7 @@ div.ContentColumn.last {
 }
 
 .Module > .Description {
-    background: #181818;
+	background: #181818;
 }
 
 #ContentSubmissions .Module > .Content {
