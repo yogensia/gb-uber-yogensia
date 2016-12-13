@@ -288,17 +288,17 @@ div#MainContent {
 }
 
 #HeaderWrapper header > div #HomeLink {
-	background: none;
+	background: url(http://yogensia.com/gamebanana/uber-yogensia/img/logo-gb.png);
+	width: 293px;
+	height: 28px;
 	box-shadow: none;
 	margin: 23px 8px 8px -2px;
 	padding: 0;
 	float: left;
 }
 
-.IconSheet.Logo {
-	background: url(http://yogensia.com/gamebanana/uber-yogensia/img/logo-gb.png);
-	width: 293px;
-	height: 28px;
+#HeaderWrapper header > div #HomeLink img {
+	display: none;
 }
 
 
