@@ -104,7 +104,8 @@ li#GamesTab,
 li#ChatTab,
 .AffiliatedStudio,
 #PostsListModule .Content ul .Post .PostHeader .Poster small,
-.IsSubmitter {
+.IsSubmitter,
+.IconSheet.Logo {
 	display: none!important;
 }
 
