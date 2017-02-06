@@ -266,7 +266,7 @@ div#MainContent {
 
 /* Navigation Bar */
 #HeaderWrapper,
-#HeaderWrapper.Fixed {
+#HeaderWrapper .is_stuck {
 	background: #212121;
 	border-bottom: 2px solid #b31b23;
 	box-shadow: none;
@@ -282,10 +282,12 @@ div#MainContent {
 	display: block !important;
 }
 
-#HeaderWrapper > header,
-#HeaderWrapper.Fixed > header {
-	width: 1180px;
+#HeaderWrapper>header,
+#HeaderWrapper .is_stuck {
+	border-bottom: none;
 	margin: 0 auto;
+	position: static !important;
+	width: 1180px;
 }
 
 #HeaderWrapper header > div #HomeLink {
@@ -754,6 +756,7 @@ div.GenericPreviewListModule div.Preview {
 }
 
 div.GenericPreviewListModule li a {
+    display: block;
 	max-width: none;
 }
 
