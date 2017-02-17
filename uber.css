@@ -165,7 +165,7 @@ body {
 }
 
 body:before {
-	background: #1a262e url(http://yogensia.com/gamebanana/uber-yogensia/img/bg.png) top center / 100% fixed;
+	background: #1a262e url(http://gb.yogensia.com/uber-yogensia/img/bg.png) top center / 100% fixed;
 	content: '';
 	display: block;
 	position: fixed;
@@ -177,7 +177,7 @@ body:before {
 }
 
 #Wrapper:before {
-	background:url(http://yogensia.com/gamebanana/uber-yogensia/img/bg-noise.png) top center;
+	background:url(http://gb.yogensia.com/uber-yogensia/img/bg-noise.png) top center;
 	content: '';
 	display: block;
 	position: fixed;
@@ -291,7 +291,7 @@ div#MainContent {
 }
 
 #HeaderWrapper header > div #HomeLink {
-	background: url(http://yogensia.com/gamebanana/uber-yogensia/img/logo-gb.png);
+	background: url(http://gb.yogensia.com/uber-yogensia/img/logo-gb.png);
 	width: 293px;
 	height: 28px;
 	box-shadow: none;
@@ -384,7 +384,7 @@ div#MainContent {
 
 #PublicNavigator .NavigatorTabs #SearchTab button {
 	box-shadow: none;
-	background: url(http://yogensia.com/gamebanana/uber-yogensia/img/icons.png);
+	background: url(http://gb.yogensia.com/uber-yogensia/img/icons.png);
 	background-position: 26px -26px;
 	width: 16px;
 	height: 17px;
@@ -408,7 +408,7 @@ div#MainContent {
 }
 
 .IconSheet.NavigatorTabIcon {
-	background: url(http://yogensia.com/gamebanana/uber-yogensia/img/icons.png);
+	background: url(http://gb.yogensia.com/uber-yogensia/img/icons.png);
 }
 
 .IconSheet.NavigatorTabIcon.PersonalTabIcon {
@@ -447,7 +447,7 @@ div#MainContent {
 }
 
 #YogLogo {
-	background: url(http://yogensia.com/gamebanana/uber-yogensia/img/logo-yog.png);
+	background: url(http://gb.yogensia.com/uber-yogensia/img/logo-yog.png);
 	display: block;
 	width: 407px;
 	height: 253px;
@@ -985,7 +985,7 @@ div.GenericPreviewListModule li {
 }
 
 #PostsListModule .Content ul .Post .PostHeader .PostTools .IconSheet {
-	background: url(http://yogensia.com/gamebanana/uber-yogensia/img/icons.png);
+	background: url(http://gb.yogensia.com/uber-yogensia/img/icons.png);
 	width: 23px;
 	height: 24px;
 }
